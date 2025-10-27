@@ -82,7 +82,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## 🔍 Operasi Morfologi Turunan
+## Operasi Morfologi Turunan
 
 ### 5. **Morphological Gradient**
 - **Konsep:** Dilation - Erosion  
@@ -159,19 +159,20 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## 📷 Contoh Input
+## Contoh Input
 Gunakan gambar biner sederhana seperti persegi putih di latar hitam (`gambar.jpg` sudah disertakan).
 
 ---
 
-## 📚 Referensi Materi
+## Referensi Materi
 **Dr. Arya Adhyaksa Waskita (2025)**  
 _Pengolahan Citra Digital – Operasi Morfologi pada Citra Biner (Pekan 5)_
 
 ---
 
-## 🧑‍💻 Disusun oleh
-**Nurul Stefhani**  
+## Disusun oleh
+**Nurul Stefhani - 231011402225 - 05TPLP009**  
 UTS Pengolahan Citra Digital  
 Universitas Pamulang
+
 
