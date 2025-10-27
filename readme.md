@@ -1,9 +1,9 @@
-# 🧩 Operasi Morfologi pada Citra Biner
+# Operasi Morfologi pada Citra Biner
 Implementasi praktikum **Pengolahan Citra Digital (Pekan 5)** — *Operasi Morfologi pada Citra Biner* menggunakan **Python dan OpenCV**.
 
 ---
 
-## 📘 Deskripsi
+## Deskripsi
 
 Operasi morfologi adalah teknik **pengolahan citra berbasis bentuk (shape-based image processing)**.  
 Operasi ini bekerja menggunakan **structuring element (SE)** — yaitu matriks kecil (misalnya 3×3 atau 5×5) yang berfungsi untuk menentukan area tetangga (neighborhood) setiap piksel yang sedang diproses.
@@ -14,15 +14,15 @@ Citra yang digunakan umumnya adalah **citra biner**, yaitu citra dengan dua nila
 
 ---
 
-## 🧱 Citra Biner dan Structuring Element (SE)
+## Citra Biner dan Structuring Element (SE)
 
-### 🔹 Citra Biner
+### Citra Biner
 Citra biner diperoleh dari proses thresholding:
 ```python
 _, image_binary = cv2.threshold(image_gray, 127, 255, cv2.THRESH_BINARY)
 ```
 
-### 🔹 Structuring Element
+### Structuring Element
 Structuring element berperan seperti kernel yang mengatur bentuk dan ukuran area yang diproses.
 Beberapa bentuk SE umum:
 - `cv2.MORPH_RECT` → persegi
@@ -36,9 +36,9 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## ⚙️ Operasi Morfologi Dasar
+## Operasi Morfologi Dasar
 
-### 🧩 1. **Erosion (Erosi)**
+### 1. **Erosion (Erosi)**
 - **Konsep:** Mengikis batas objek foreground.
 - **Efek:** Objek mengecil, noise kecil hilang, dan objek yang berdekatan bisa terpisah.
 - **Rumus:** Piksel bernilai 1 akan tetap 1 hanya jika semua piksel di bawah SE bernilai 1.
@@ -49,7 +49,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-### 🧩 2. **Dilation (Dilasi)**
+### 2. **Dilation (Dilasi)**
 - **Konsep:** Memperbesar objek foreground.
 - **Efek:** Objek melebar, celah kecil tertutup, objek terpisah bisa menyatu.
 - **Rumus:** Piksel bernilai 0 akan menjadi 1 jika minimal satu piksel di bawah SE bernilai 1.
@@ -60,7 +60,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-### 🧩 3. **Opening (Buka)**
+### 3. **Opening (Buka)**
 - **Konsep:** Erosion → Dilation  
   (Menghilangkan noise di luar objek tanpa mengubah bentuk utama)
 - **Rumus:** `A ∘ B = (A⊖B)⊕B`
@@ -71,7 +71,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-### 🧩 4. **Closing (Tutup)**
+### 4. **Closing (Tutup)**
 - **Konsep:** Dilation → Erosion  
   (Menutup lubang kecil di dalam objek)
 - **Rumus:** `A • B = (A⊕B)⊖B`
@@ -84,7 +84,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ## 🔍 Operasi Morfologi Turunan
 
-### 🧩 5. **Morphological Gradient**
+### 5. **Morphological Gradient**
 - **Konsep:** Dilation - Erosion  
   Menampilkan batas luar (outline) dari objek.
 - **Aplikasi:** Ekstraksi boundary, deteksi tepi alternatif Sobel/Canny.
@@ -95,7 +95,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-### 🧩 6. **Top Hat dan Black Hat**
+### 6. **Top Hat dan Black Hat**
 - **Top Hat:** `Original - Opening`  
   ➜ Menonjolkan objek kecil yang **lebih terang** dari background.
   ```python
@@ -109,7 +109,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## 🧠 Aplikasi Praktis
+## Aplikasi Praktis
 
 1. **Noise Removal**
    - Menggabungkan *Opening* dan *Closing* untuk membersihkan hasil thresholding.
@@ -129,7 +129,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## 📊 Ringkasan Operasi
+## Ringkasan Operasi
 
 | Operasi | Simbol | Kombinasi | Efek |
 |----------|--------|------------|------|
@@ -143,7 +143,7 @@ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
 
 ---
 
-## 💻 Cara Menjalankan
+## Cara Menjalankan
 
 1. **Pastikan Python sudah terinstal.**
 2. **Install dependensi:**
@@ -174,3 +174,4 @@ _Pengolahan Citra Digital – Operasi Morfologi pada Citra Biner (Pekan 5)_
 **Nurul Stefhani**  
 UTS Pengolahan Citra Digital  
 Universitas Pamulang
+
